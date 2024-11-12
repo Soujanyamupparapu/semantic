@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Developer Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px;
+        }
+        button {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #cccccc;
+        }
+    </style>
+    
+</head>
+<body>
+
+<h1>Full Stack Developer Application Form</h1>
+
+<form id="applicationForm" action="/submit-application" method="post">
+
+    <!-- Personal Information -->
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required maxlength="50" placeholder="Enter your full name">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required minlength="10" maxlength="15" placeholder="Enter your phone number">
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required min="1900-01-01" max="2023-12-31">
+
+    <!-- Skills -->
+    <label for="skills">Skills (select multiple)</label>
+    <select id="skills" name="skills[]" multiple required>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="nodejs">Node.js</option>
+        <option value="react">React</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+    </select>
+
+    <!-- Experience -->
+    <label for="experience">Years of Experience</label>
+    <input type="number" id="experience" name="experience" required min="0" max="30" placeholder="Enter your years of experience">
+
+    <label for="portfolio">Portfolio Website</label>
+    <input type="url" id="portfolio" name="portfolio" required placeholder="https://your-portfolio.com">
+
+    <label for="linkedin">LinkedIn Profile</label>
+    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+
+    <!-- Position Preference -->
+    <label for="position">Position Level</label>
+    <select id="position" name="position" required>
+        <option value="" disabled selected>Select Position</option>
+        <option value="junior">Junior Developer</option>
+        <option value="mid">Mid-Level Developer</option>
+        <option value="senior">Senior Developer</option>
+    </select>
+
+    <!-- Availability -->
+    <label for="availability">Available Start Date</label>
+    <input type="date" id="availability" name="availability" required>
+
+    <!-- Cover Letter -->
+    <label for="coverLetter">Cover Letter</label>
+    <textarea id="coverLetter" name="coverLetter" required minlength="100" maxlength="1000" placeholder="Write a brief cover letter (100-1000 characters)" rows="5"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Application</button>
+
+</form>
+
+</body>
+</html>
